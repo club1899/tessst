@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Shop Intro</title>
+    <style>
+@media screen {
+    
+
+    
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #intro {
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+        }
+
+        #menuIcon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 2em;
+            z-index: 1;
+            color: #000;
+        }
+
+        #sideMenu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 17%;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menubuttons {
+            margin-top: 43.7px;
+        }
+
+        #closeMenu {
+            font-size: 2em;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        #sideMenu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+            display: block;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+            transition: color 0.3s ease-in-out; /* Effekt für das hover-Verhalten */
+        }
+
+        #shopButton {
+            border: 2px solid white;
+            color: white;
+            border-radius: 16px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14.6px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s ease-in-out; /* Effekt für das hover-Verhalten */
+        }
+        #shopButton:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+       
+          }
+    </style>
+</head>
+<body>
+
+    <div id="intro">
+        <img class="introimg" src="1709925496340.jpg">
+        <div id="menuIcon" onclick="toggleMenu()">☰</div>
+        <button id="shopButton" onclick="redirectToShop()">Shop Now</button>
+    </div>
+
+    <div id="sideMenu">
+        <div id="closeMenu" onclick="toggleMenu()">✖</div>
+        <div class="menubuttons">
+        <a href="#t_shirts">T-Shirts</a>
+        <a href="#checkout">Checkout</a>
+        <a href="#kontakt">Kontakt</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('sideMenu');
+            var menuIcon = document.getElementById('menuIcon');
+
+            if (menu.style.transform === 'translateX(0%)') {
+                menu.style.transform = 'translateX(100%)';
+                menuIcon.style.color = '#000'; // Ändere die Farbe auf Weiß
+            } else {
+                menu.style.transform = 'translateX(0%)';
+                menuIcon.style.color = '#fff'; // Ändere die Farbe auf Schwarz
+            }
+        }
+
+        function redirectToShop() {
+            // Hier kannst du den Link zu deiner Shop-Seite einfügen.
+            alert("Du wirst zum Shop weitergeleitet!");
+        }
+    </script>
+
+</body>
+</html>
